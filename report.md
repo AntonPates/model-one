@@ -10,11 +10,6 @@
 - Technical indicators {"RSI", "OBV", "ADX", "MACD", "AD", "200_MA", "no_indicators"}
 - Up to 9 servers (16 Ampere CPU cores and 32 GB RAM each) were used for training and inference simultaneously.
 
-#### Inference
-- 2 600 031 predictions of stock prices were made for each traded Thursday from Nov/1/2023 to Nov/1/2024.
-- 50 981 models were used for inference.
-- Threshold for loss value of model to make its way to the inference stage was set to 0.005.
-
 #### News
 - 1397474 news were used to train models.
 
@@ -25,17 +20,8 @@
 - Most successful trading simulation was done for companies which have at least 2% weight in S&P 500.
 - We don't have any news for companies hban, ce. For jpm and mtb news are partialy missing.
 - Excluded tickers ['pltr', 'dell', 'erie', 'kkr', 'crwd', 'gddy', 'vst', 'gev', 'solv', 'smci', 'deck']
-- Models for gehc, gev, hsy, hubb, hum, hwm, ice, idxx, iex, iff, incy, intc, intu, invh, ip, ipg, iqv, kvue, solv, sw, vlto were not trained. Training was stopped because of lack of disk space to preserve models.
-
-#### Inference
-- 2 600 031 predictions of stock prices were made for each traded Thursday from Nov/1/2023 to Nov/1/2024.
-- 50 981 models were used for inference.
-- Threshold for loss value of model to make its way to the inference stage was set to 0.005.
 
 
-#### Conclusion (preliminary)
-- Models with news sentiment parameter performed worse than the models without news sentiment by 22.4%. 1 285 958.89 vs 1 510 182.29. 
-- Models with min loss without news sentiment segregation performed slightly worse than models without news 1 493 827.71 vs 1 510 182.29.
 
 
 ### Description of what was done
@@ -77,7 +63,6 @@ Example of model training command:
 - Most successful trading simulation was done for companies which have at least 2% weight in S&P 500.
 - We don't have any news for companies hban, ce. For jpm and mtb news are partialy missing.
 - Excluded tickers ['pltr', 'dell', 'erie', 'kkr', 'crwd', 'gddy', 'vst', 'gev', 'solv', 'smci', 'deck'] - they were excluded/included in S&P 500 during the period of training and inference.
-- Models for gehc, gev, hsy, hubb, hum, hwm, ice, idxx, iex, iff, incy, intc, intu, invh, ip, ipg, iqv, kvue, solv, sw, vlto were not trained. Training was stopped because of lack of disk space to preserve models.
 - Trading simulation was done for each company for each Thursday from Nov/1/2023 to Nov/1/2024.
 - At the start we have 1 000 000 USD deposit.
 - Deposit was distributed between companies in S&P 500 with weights proportional to their weight in S&P 500.
